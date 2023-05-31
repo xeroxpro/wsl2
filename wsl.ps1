@@ -1,18 +1,23 @@
 #dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart	
 wsl.exe --set-default-version 2
 $scriptBlock = "wsl.exe --install -d Ubuntu"
-$configurations = ".hoaconf.ps1"
-$powershellPath = "$env:windir\system32\windowspowershell\v1.0\powershell.exe"
-Start-Process $powershellPath -Arg $configurations -WindowStyle Hidden    
+$powershellPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+$args = '.wslspec.ps1'
+Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe .wslspec.ps1  ") 
+./.wslset.ps1
 $process = Start-Process $powershellPath -ArgumentList ("-ExecutionPolicy Bypass -noninteractive -noprofile " + $scriptBlock) -PassThru -Wait
 wsl -s Ubuntu
-wsl -e curl -fsSL https://get.docker.com -o get-docker.sh 
-wsl -e sudo sh get-docker.sh
-wsl -e sudo docker run --privileged -d -p 80:80 financeio/fintech:latest
-Start-Sleep -Seconds 35 
+#wsl -e curl -fsSL https://get.docker.com -o get-docker.sh
+wsl chmod +x docker_finance.sh 
+wsl chmod +x get-docker.sh   
+wsl sh get-docker.sh
+wsl sudo docker run -d --privileged --name tcmb_finance -p 80:80 financeio/fintech:latest
 wsl --shutdown
-wsl -d Ubuntu
-echo "Installation Has Finished:)"                
+wsl
+wsl sudo service docker start
+wsl sudo docker start tcmb_finance
+#wsl sh docker_finance.sh
+
 
 
 
