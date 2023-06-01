@@ -29,7 +29,11 @@ Prerequisites
 You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11 to use the commands below. If you are on earlier versions please see the manual install page.
 
 
+How to install WSL and get ready for container based application?
 
+1.)Install git on your system
+    - Open Powershell and type "winget install --id Git.Git -e --source winget"
 
-How to install WSL and Make system ready for conttaine based application?
+![image](https://github.com/xeroxpro/wsl2/assets/40662677/876fa490-2853-4f0d-a0d1-d093ceb5c45b)
+
 
