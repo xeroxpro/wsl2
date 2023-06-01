@@ -1,9 +1,11 @@
-$dir = $PWD.ProviderPath
 Start-Process powershell.exe -argumentList('
-"-noexit -c Set-Location -LiteralPath $dir";
-"cp .wslspec.ps1 C:\Windows\System32";
-"cp wsl.vbs C:\Windows\System32";
-"cp wsldiag.bat C:\Windows\System32";
+"Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force";
+"Install-Module posh-git -Scope CurrentUser -Force";
+"Add-PoshGitToProfile -AllHosts​​​​​​​";
+"git clone https://github.com/xeroxpro/wsl2.git"
+"cp wsl2/.wslspec.ps1 C:\Windows\System32";
+"cp wsl2/wsl.vbs C:\Windows\System32";
+"cp wsl2/wsldiag.bat C:\Windows\System32";
 "$trigger = New-JobTrigger -AtLogOn -User *";
 "$taskAction = New-ScheduledTaskAction -Execute wsl.vbs;
 "$setting = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Hidden 
