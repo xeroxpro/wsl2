@@ -11,11 +11,13 @@ wsl -s Ubuntu
 wsl chmod +x docker_finance.sh 
 wsl chmod +x get-docker.sh   
 wsl sh get-docker.sh
-wsl sudo docker run -d --privileged --name tcmb_finance -p 80:80 financeio/fintech:latest
+wsl -e sudo docker run --privileged --name tcmb_finance -p 80:80 financeio/fintech:latest
 wsl --shutdown
+wait
 wsl
 wsl sudo service docker start
-wsl sudo docker start tcmb_finance
+wsl sudo docker run --privileged --name tcmb_finance -p 80:80 financeio/fintech:latest wsl --shutdown
+wsl start tcmb_finance
 #wsl sh docker_finance.sh
 
 
