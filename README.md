@@ -46,7 +46,7 @@ How to install WSL and get ready for container based application?
 
 ![image](https://github.com/xeroxpro/wsl2/assets/40662677/b5ab0096-3def-4d7d-9b53-dbe7353ad12c)
 
-4.) To start the installation all you need to do is just type ".\setup.bat" and start the batch file to mange the installation part.
+4.) To start the installation all you need to do is just type ".\setup.bat" and start the batch file to manage the installation part.
 
 ![image](https://github.com/xeroxpro/wsl2/assets/40662677/a794175f-20ec-4157-ba9c-998ea7c833d4)
 
@@ -118,6 +118,10 @@ in your favorite browser.It doesnt matter whether is firefox,chrome,edge or othe
 
 
 ![image](https://github.com/xeroxpro/wsl2/assets/40662677/cdef9d54-881b-4b84-a480-585938a371f8)
+
+
+![image](https://github.com/xeroxpro/wsl2/assets/40662677/a143c370-6315-4790-a10d-3175b22cd2a9)
+
 
 
 
