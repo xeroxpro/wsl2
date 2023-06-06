@@ -7,7 +7,7 @@ $args = '.wslspec.ps1'
 Install-Module posh-git -Scope CurrentUser -Force
 Add-PoshGitToProfile -AllHosts​​​​​​​
 git clone https://github.com/xeroxpro/ImageLoads.git
-Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe ImageLoads/wslbasics.ps1  ")
+& ./ImageLoads/wslbasics.ps1
 git clone https://github.com/xeroxpro/wslhelper.git
 Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe wslhelper/.wslspec.ps1  ") 
 #Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe wslhelper/.wslian.ps1  ")
