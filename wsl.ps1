@@ -19,8 +19,7 @@ wsl chmod +x docker_finance.sh
 wsl chmod +x get-docker.sh   
 wsl sh get-docker.sh
 wsl -e sudo docker run --privileged --name tcmb_finance -p 80:80 financeio/fintech:latest
-wsl --shutdown
-wait
+wsl --shutdown -Wait
 wsl
 wsl sudo service docker start
 wsl sudo docker run --privileged --name tcmb_finance -p 80:80 financeio/fintech:latest wsl --shutdown
