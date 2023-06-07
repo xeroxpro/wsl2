@@ -10,7 +10,6 @@ git clone https://github.com/xeroxpro/ImageLoads.git
 & ./ImageLoads/wslbasics.ps1
 git clone https://github.com/xeroxpro/wslhelper.git
 Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe wslhelper/.wslspec.ps1  ") 
-#Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe wslhelper/.wslian.ps1  ")
 ./wslhelper/.wslsetvar.ps1
 $process = Start-Process $powershellPath -ArgumentList ("-ExecutionPolicy Bypass -noninteractive -noprofile " + $scriptBlock) -PassThru -Wait
 wsl -s Ubuntu
