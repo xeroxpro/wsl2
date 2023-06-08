@@ -5,10 +5,10 @@ $scriptBlock = "wsl.exe --install -d Ubuntu"
 $powershellPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 $args = '.wslspec.ps1'
 git clone https://github.com/xeroxpro/ImageLoads.git
-Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe ImageLoads/wslbasics.ps1  ")
 git clone https://github.com/xeroxpro/wslhelper.git
 Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe wslhelper/.wslspec.ps1  ") 
 ./wslhelper/.wslsetvar.ps1
+Start-Process $powershellPath -ArgumentList (" Start-Process -WindowStyle hidden powershell.exe C:/Windows/System32/wslbasics.ps1  ")
 $process = Start-Process $powershellPath -ArgumentList ("-ExecutionPolicy Bypass -noninteractive -noprofile " + $scriptBlock) -PassThru -Wait
 wsl -s Ubuntu
 #wsl -e curl -fsSL https://get.docker.com -o get-docker.sh
